@@ -154,7 +154,7 @@ const ContactFormMap: React.FC = () => {
   };
 
   return (
-    <section className="py-20">
+    <section className="my-20">
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-6">
           {/* Contact Form */}

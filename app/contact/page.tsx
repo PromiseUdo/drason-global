@@ -4,9 +4,9 @@ import ContactInfo from "./components/contact-info";
 
 const page = () => {
   return (
-    <div>
+    <div className="">
       <ContactFormMap />
-      <ContactInfo/>
+      <ContactInfo />
     </div>
   );
 };
