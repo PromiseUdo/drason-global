@@ -9,19 +9,21 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/03.webp",
-    headline: "Sustainable, healthy agro products for your well-being",
-    subheading: "Drason Foods",
-    primaryButton: "Explore",
-    secondaryButton: "Learn more",
-  },
-  {
     image: "/01.webp",
     headline: "Excellent Services in Oil and Gas Sector",
     subheading: "Drason Energies",
     primaryButton: "Explore",
     secondaryButton: "Learn more",
   },
+
+  {
+    image: "/03.webp",
+    headline: "Sustainable, healthy agro products for your well-being",
+    subheading: "Drason Foods",
+    primaryButton: "Explore",
+    secondaryButton: "Learn more",
+  },
+
   {
     image: "/maritime.webp",
     headline: "Efficient Commercial Maritime Services",
