@@ -221,17 +221,17 @@ const Navbar = () => {
                   </SheetTrigger>
                   <SheetContent
                     side="right"
-                    className="bg-[#890c25] text-white w-[75vw] max-w-sm p-6 overflow-y-auto"
+                    className="bg-[#ffffff] text-[#191919] w-[75vw] max-w-sm p-6 overflow-y-auto"
                   >
                     <div className="flex flex-col h-full">
                       {/* ... (keep existing logo and other elements) */}
 
-                      <div className="flex justify-center mb-8">
+                      <div className="flex justify-center mb-8 pb-3 border-b border-gray-400/50">
                         <Link href="/" passHref>
                           <Image
-                            src="/logo.png"
+                            src="/drason-logo.png"
                             alt="Drason Logo"
-                            width={150}
+                            width={65}
                             height={36}
                             className="object-contain"
                           />
@@ -256,7 +256,7 @@ const Navbar = () => {
                             }}
                             className="w-full flex items-center justify-between text-lg font-medium hover:text-gray-200 transition-colors duration-200 rounded-md px-4 py-3 hover:bg-[#a1122f]/50"
                           >
-                            About Us
+                            Businesses
                             <motion.span
                               animate={{ rotate: aboutOpen ? 180 : 0 }}
                               transition={{ duration: 0.2 }}
@@ -306,7 +306,7 @@ const Navbar = () => {
                       </nav>
 
                       <div className="mt-8 border-t border-gray-400/50 pt-6">
-                        <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-100 mb-4">
+                        <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">
                           Contact Us
                         </h3>
                         <div className="flex flex-col gap-3">
@@ -322,13 +322,13 @@ const Navbar = () => {
                             className="flex items-center gap-2 text-sm hover:text-gray-200 transition-colors duration-200"
                           >
                             <Mail className="h-5 w-5" />
-                           info@drasonglobal.com
+                            info@drasonglobal.com
                           </a>
                         </div>
                       </div>
 
-                      <div className="mt-6 border-t border-gray-400/50 pt-6">
-                        <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-100 mb-4">
+                      <div className="mt-6 border-t border-gray-400/50 py-6">
+                        <h3 className="text-sm font-semibold uppercase tracking-wide mb-4">
                           Follow Us
                         </h3>
                         <div className="flex gap-4">
