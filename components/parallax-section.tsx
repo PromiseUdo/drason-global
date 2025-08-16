@@ -8,7 +8,7 @@ interface ParallaxImageSectionProps {
 }
 
 const ParallaxImageSection: React.FC<ParallaxImageSectionProps> = ({
-  backgroundImage = "/01.jpg",
+  backgroundImage = "/01.webp",
 }) => {
   return (
     <section

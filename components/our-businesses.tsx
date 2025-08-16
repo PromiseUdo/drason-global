@@ -18,28 +18,28 @@ const services: Service[] = [
     description:
       "Comprehensive agricultural solutions including equipment leasing, crop consulting, and farm management services.",
     image: "/03.webp", // Replace with actual image path
-    link: "/services/agro",
+    link: "#",
   },
   {
     title: "Maritime Services",
     description:
       "End-to-end maritime solutions including vessel chartering, logistics, and port operations management.",
     image: "/maritime.webp", // Replace with actual image path
-    link: "/services/maritime",
+    link: "#",
   },
   {
     title: "Oil & Gas Services",
     description:
       "Specialized solutions for the energy sector including equipment supply, maintenance, and technical support.",
-    image: "/01.jpg", // Replace with actual image path
-    link: "/services/oil-gas",
+    image: "/01.webp", // Replace with actual image path
+    link: "#",
   },
   {
     title: "Training Programs",
     description:
       "Industry-recognized certification courses for professionals across all our service sectors.",
     image: "/presentation.webp", // Replace with actual image path
-    link: "/training",
+    link: "#",
   },
 ];
 
@@ -53,7 +53,7 @@ const BusinessSection: React.FC = () => {
             Our Business Divisions
           </h2>
           <Link
-            href="/services"
+            href="/"
             className="group overflow-hidden inline-flex relative items-center gap-2 px-6 py-3 text-sm bg-[#890c25] font-semibold text-white uppercase tracking-wider transition-colors"
           >
             <span className="relative z-10">View All Services</span>

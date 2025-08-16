@@ -1,7 +1,7 @@
 import React from "react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin } from "lucide-react"; // Using Lucide icons
 
 import { FaTwitter, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa6"; // Font Awesome 6 icons
 
@@ -37,7 +37,7 @@ const Footer = () => {
           <hr className="border-gray-500  " />
           <div className="w-full pb-[80px] pt-[50px] grid grid-cols-1 md:grid-cols-4 gap-[40px]">
             {/* First Column */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <div className=" flex">
                 <Image
                   src="/drason-logo.png"
@@ -60,6 +60,44 @@ const Footer = () => {
               <p className="text-gray-400 text-[14px] leading-[21px] mb-2">
                 <span className="font-bold">Email:</span> info@drasonglobal.com
               </p>
+            </div> */}
+
+            <div className="flex flex-col gap-4">
+              <div className="flex">
+                <Image
+                  src="/drason-logo.png"
+                  alt="Drason logo"
+                  width={85}
+                  height={50}
+                  unoptimized
+                  className="w-[85px] h-auto object-contain"
+                />
+              </div>
+
+              {/* Address with icon */}
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-1 text-gray-400 flex-shrink-0" />
+                <p className="text-gray-400 text-[14px] leading-[21px]">
+                  1 Etim Okpoyo Close, off PH/Aba Expressway, Port Harcourt,
+                  Rivers state
+                </p>
+              </div>
+
+              {/* Phone with icon */}
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 mt-1 text-gray-400 flex-shrink-0" />
+                <p className="text-gray-400 text-[14px] leading-[21px]">
+                  NG: +234 (0) 706 216 8146
+                </p>
+              </div>
+
+              {/* Email with icon */}
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 mt-1 text-gray-400 flex-shrink-0" />
+                <p className="text-gray-400 text-[14px] leading-[21px]">
+                  info@drasonglobal.com
+                </p>
+              </div>
             </div>
 
             <div className="flex flex-col gap-2">

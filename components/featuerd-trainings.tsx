@@ -18,28 +18,28 @@ const programs: Program[] = [
     description:
       "comprehensive training in process safety engineering tailored for engineers, operators, technicians, and HSE (Health, Safety, and Environment) professionals",
     image: "/energy.webp",
-    link: "/faculties/faculty-of-allied-health-sciences",
+    link: "#",
   },
   {
     title: "Process Safety Engineering",
     description:
       "Enhanced understanding of process safety concepts, improved risk assessment skills, compliance with safety regulations, and ability to implement effective safety measures",
     image: "/safety.webp",
-    link: "/faculties/faculty-of-natural-and-applied-sciences",
+    link: "#",
   },
   {
     title: "Mechanical",
     description:
       "Gain expertise in areas such as thermodynamics, fluid mechanics, materials science, and mechanical design",
     image: "/welding.webp",
-    link: "/faculties/faculty-of-computing",
+    link: "#",
   },
   {
     title: "Instrumentation",
     description:
       "Focuses on various industries' instrumentation principles, control systems, sensors, and automation technologies",
     image: "/instrumentation.webp",
-    link: "/faculties/faculty-of-arts-management-and-social-sciences",
+    link: "#",
   },
 ];
 
@@ -53,7 +53,7 @@ const FeaturedTrainings: React.FC = () => {
             Training Programs
           </h2>
           <Link
-            href="/faculties"
+            href="#"
             className="group overflow-hidden inline-flex relative items-center gap-2 px-6 py-3 text-sm bg-[#890c25] font-semibold text-white  uppercase tracking-wider  transition-colors"
           >
             <span className="relative z-10">Explore</span>
