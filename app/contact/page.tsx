@@ -4,7 +4,7 @@ import ContactInfo from "./components/contact-info";
 
 const page = () => {
   return (
-    <div className="">
+    <div className="py-20">
       <ContactFormMap />
       <ContactInfo />
     </div>

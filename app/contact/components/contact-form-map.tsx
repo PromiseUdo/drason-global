@@ -2,101 +2,219 @@
 
 // import React, { useState } from "react";
 // import MaxWidthWrapper from "@/components/max-width-wrapper";
+// import { Form, FormField } from "@/components/ui/form";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import { useForm } from "react-hook-form";
+// import z from "zod/v3";
+// import { ContactFormSchema } from "@/types/contact-form-schema";
 
 // interface ContactFormData {
 //   name: string;
 //   subject: string;
 //   email: string;
 //   phone: string;
+//   businessUnit: string;
 //   message: string;
 // }
 
-// const ContactFormMap: React.FC = () => {
+// const ContactForm: React.FC = () => {
 //   const [formData, setFormData] = useState<ContactFormData>({
 //     name: "",
 //     subject: "",
 //     email: "",
 //     phone: "",
+//     businessUnit: "",
 //     message: "",
 //   });
 
 //   const handleChange = (
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+//     e: React.ChangeEvent<
+//       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+//     >
 //   ) => {
 //     setFormData({ ...formData, [e.target.name]: e.target.value });
 //   };
 
-//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     // Replace with your API or form submission logic
-//     console.log("Form submitted:", formData);
-//     // Reset form
-//     setFormData({ name: "", subject: "", email: "", phone: "", message: "" });
-//   };
+//   const form = useForm<z.infer<typeof ContactFormSchema>>({
+//     resolver: zodResolver(ContactFormSchema),
+//     defaultValues: {
+//       name: "",
+//       email: "",
+//       phone: "",
+//       businessUnit: "",
+//       message: "",
+//     },
+//   });
+
+//   async function onSubmit(values: z.infer<typeof ContactFormSchema>) {}
 
 //   return (
-//     <section className="py-20 ">
+//     <section className="">
 //       <MaxWidthWrapper>
-//         <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-6">
+//         <div className="py-10 flex items-center flex-col">
+//           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading mb-4 sm:mb-0">
+//             Contact Us
+//           </h2>
+
+//           <p className="text-[15px] text-[#737477] leading-[22px]">
+//             Reach out to us for any query, we'd love to hear from you!
+//           </p>
+//         </div>
+//         <div className="grid grid-cols-1 items-center w-full gap-6">
 //           {/* Contact Form */}
-//           <div className="shadow   p-[20px]  lg:pt-[50px]   lg:p-[50px] flex flex-col gap-[1.25rem]">
-//             <h2 className="text-3xl font-bold font-heading">How can we help you?</h2>
+//           <div className="shadow p-[20px] lg:pt-[50px] lg:p-[50px] flex flex-col gap-[1.25rem] w-full">
+//             {/* <h2 className="text-3xl font-bold font-heading">
+//               How can we help you?
+//             </h2> */}
 //             <div className="pb-[20px] leading-[22.5px] text-[15px]">
-//               <p>Fill the form bellow to send us a message</p>
+//               <p>Fill the form below to send us a message</p>
 //             </div>
-//             <form className="flex flex-col gap-[20px]">
-//               <div className="grid grid-cols-2 gap-[20px]">
-//                 <input
-//                   type="text"
-//                   placeholder="Your Name"
-//                   className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-//                 />
-//                 <input
-//                   type="text"
-//                   placeholder="Subject"
-//                   className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-//                 />
-//               </div>
-//               <div className="grid grid-cols-2 gap-[20px]">
-//                 <input
-//                   type="email"
-//                   placeholder="Your Email"
-//                   className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-//                 />
-//                 <input
-//                   type="text"
-//                   placeholder="Your Phone"
-//                   className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-//                 />
-//               </div>
-//               <div className="w-full">
-//                 <textarea
-//                   placeholder="Your Message"
-//                   className="border border-[#EAEAEA] outline-none w-full h-[150px] placeholder:text-[#C2C2C2] p-[16px] pl-[21px]"
-//                 ></textarea>
-//               </div>
 
-//               <div className="w-full">
-//                 <button className="bg-[#890c25] text-white w-full py-[10px] tracking-[2px] text-[14px] uppercase">
-//                   Send message
-//                 </button>
-//               </div>
-//             </form>
-//           </div>
+//             <Form {...form}>
+//               <form
+//                 onSubmit={form.handleSubmit(onSubmit)}
+//                 className="flex flex-col space-y-3 items-start w-full"
+//               >
+//                 <FormField
+//                   control={form.control}
+//                   name="email"
+//                   render={({ field }) => (
+//                     <FormItem className="w-full flex items-start flex-col">
+//                       <FormLabel className="text-white text-base">
+//                         Email{" "}
+//                       </FormLabel>
 
-//           {/* Map */}
-//           <div className="bg-white border border-gray-300 overflow-hidden h-full transition-shadow duration-300">
-//             <iframe
-//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.520103287784!2d8.113497314769484!3d6.324961995409463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTknMjkuOSJOIDjCsDA2JzQ4LjEiRQ!5e0!3m2!1sen!2sng!4v1698765432101!5m2!1sen!2sng"
-//               width="100%"
-//               height="100%"
-//               className="border-0 w-full h-[400px] md:h-full"
-//               allowFullScreen
-//               loading="lazy"
-//               referrerPolicy="no-referrer-when-downgrade"
-//               title="Map of Kilometer 10 Abakaliki-Enugu Expressway, Ebonyi State"
-//               aria-label="Map of Kilometer 10 Abakaliki-Enugu Expressway, Ebonyi State"
-//             ></iframe>
+//                       <FormControl>
+//                         <Input
+//                           {...field}
+//                           className="w-full text-[#181818] placeholder:text-[#181818] bg-[#DEEDCC]"
+//                           type="text"
+//                           // onChange={() => setCustomerName(field.value)}
+//                           // value={installer?.name ?? ""}
+//                           // disabled={true}
+
+//                           placeholder="Enter email"
+//                         />
+//                       </FormControl>
+//                       <FormMessage />
+//                     </FormItem>
+//                   )}
+//                 />
+//                 {/* <FormField
+//                   control={form.control}
+//                   name="phone"
+//                   render={({ field }) => (
+//                     <FormItem className="w-full flex items-start flex-col">
+//                       <FormLabel className="text-white text-base">
+//                         Phone Number{" "}
+//                       </FormLabel>
+
+//                       <FormControl>
+//                         <Input
+//                           {...field}
+//                           className="w-full  bg-[#DEEDCC]"
+//                           type="text"
+
+//                           placeholder="Enter Phone number"
+//                         />
+//                       </FormControl>
+//                       <FormMessage />
+//                     </FormItem>
+//                   )}
+//                 /> */}
+
+//                 <FormField
+//                   control={form.control}
+//                   name="phone"
+//                   render={({ field }) => (
+//                     <PhoneInputComponent
+//                       value={field.value}
+//                       onChange={field.onChange}
+//                       name="phone"
+//                       label="Phone Number"
+//                     />
+//                   )}
+//                 />
+
+//                 <FormField
+//                   control={form.control}
+//                   name="password"
+//                   render={({ field }) => (
+//                     <FormItem className="w-full flex items-start flex-col">
+//                       <FormLabel className="text-white text-base">
+//                         Password{" "}
+//                       </FormLabel>
+
+//                       <FormControl>
+//                         <Input
+//                           {...field}
+//                           className="w-full  bg-[#DEEDCC]"
+//                           placeholder="Password"
+//                           type={showPassword ? "text" : "password"}
+//                           autoComplete="current-password"
+//                           endContent={
+//                             <span onClick={togglePasswordShow}>
+//                               {showPassword ? (
+//                                 <EyeOff className="w-4 h-4" />
+//                               ) : (
+//                                 <Eye className="w-4 h-4" />
+//                               )}
+//                             </span>
+//                           }
+//                         />
+//                       </FormControl>
+//                       <FormMessage />
+//                     </FormItem>
+//                   )}
+//                 />
+//                 <FormField
+//                   control={form.control}
+//                   name="confirm_password"
+//                   render={({ field }) => (
+//                     <FormItem className="w-full flex items-start flex-col">
+//                       <FormLabel className="text-white text-base">
+//                         Confirm Passowrd{" "}
+//                       </FormLabel>
+
+//                       <FormControl>
+//                         <Input
+//                           {...field}
+//                           className="w-full  bg-[#DEEDCC]"
+//                           placeholder="Confirm Password"
+//                           type={showConfirmPassword ? "text" : "password"}
+//                           autoComplete="current-password"
+//                           endContent={
+//                             <span onClick={toggleConfirmPasswordShow}>
+//                               {showConfirmPassword ? (
+//                                 <EyeOff className="w-4 h-4" />
+//                               ) : (
+//                                 <Eye className="w-4 h-4" />
+//                               )}
+//                             </span>
+//                           }
+//                         />
+//                       </FormControl>
+//                       <FormMessage />
+//                     </FormItem>
+//                   )}
+//                 />
+
+//                 <div className="w-full flex items-center justify-center">
+//                   <Button
+//                     disabled={!form.formState.isDirty}
+//                     type="submit"
+//                     className="w-full font-bold text-black bg-[#3EB555] hover:bg-[#359C4A]"
+//                   >
+//                     {isLoading ? (
+//                       <Loader2 className="h-4 w-4 animate-spin text-white" />
+//                     ) : (
+//                       "Proceed"
+//                     )}
+//                   </Button>
+//                 </div>
+//               </form>
+//             </Form>
+
 //           </div>
 //         </div>
 //       </MaxWidthWrapper>
@@ -104,162 +222,215 @@
 //   );
 // };
 
-// export default ContactFormMap;
+// export default ContactForm;
 
 "use client";
 
 import React, { useState } from "react";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormControl,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { ContactFormSchema } from "@/types/contact-form-schema";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Loader2 } from "lucide-react";
+import z from "zod";
 
-interface ContactFormData {
-  name: string;
-  subject: string;
-  email: string;
-  phone: string;
-  businessUnit: string;
-  message: string;
-}
+const ContactForm: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
-const ContactFormMap: React.FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    subject: "",
-    email: "",
-    phone: "",
-    businessUnit: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Replace with your API or form submission logic
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
+  const form = useForm<z.infer<typeof ContactFormSchema>>({
+    resolver: zodResolver(ContactFormSchema),
+    defaultValues: {
       name: "",
-      subject: "",
       email: "",
       phone: "",
       businessUnit: "",
       message: "",
-    });
-  };
+    },
+  });
+
+  async function onSubmit(values: z.infer<typeof ContactFormSchema>) {
+    setIsLoading(true);
+    try {
+      // Replace with your form submission logic
+      console.log("Form submitted:", values);
+      // Reset form after submission
+      form.reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
-    <section className="my-20">
+    <section className="">
       <MaxWidthWrapper>
-        <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-6">
-          {/* Contact Form */}
-          <div className="shadow p-[20px] lg:pt-[50px] lg:p-[50px] flex flex-col gap-[1.25rem]">
-            <h2 className="text-3xl font-bold font-heading">
-              How can we help you?
+        <div className="w-full">
+          <div className="py-10 flex items-center flex-col">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading mb-4 sm:mb-0">
+              Contact Us
             </h2>
-            <div className="pb-[20px] leading-[22.5px] text-[15px]">
-              <p>Fill the form below to send us a message</p>
-            </div>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-[20px]">
-              <div className="grid grid-cols-2 gap-[20px]">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-                />
-                <input
-                  name="subject"
-                  type="text"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-[20px]">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-                />
-                <input
-                  name="phone"
-                  type="text"
-                  placeholder="Your Phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] outline-none h-[53px] placeholder:text-[#C2C2C2] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-                />
-              </div>
-
-              {/* Business Unit Select Dropdown */}
-              <div className="w-full">
-                {/* <label
-                  htmlFor="businessUnit"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Business Unit
-                </label> */}
-                <select
-                  name="businessUnit"
-                  id="businessUnit"
-                  value={formData.businessUnit}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] placeholder:text-[#C2C2C2] outline-none w-full h-[53px] text-[#333] pt-[17px] pr-[16px] pb-[16px] pl-[21px]"
-                  required
-                >
-                  <option value="">Select Business Unit</option>
-                  <option value="Agro Services">Agro Services</option>
-                  <option value="Marine">Marine</option>
-                  <option value="Energies">Energies</option>
-                </select>
-              </div>
-
-              <div className="w-full">
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="border border-[#EAEAEA] outline-none w-full h-[150px] placeholder:text-[#C2C2C2] p-[16px] pl-[21px]"
-                ></textarea>
-              </div>
-
-              <div className="w-full">
-                <button
-                  type="submit"
-                  className="bg-[#890c25] text-white w-full py-[10px] tracking-[2px] text-[14px] uppercase hover:bg-[#6e0a1f] transition-colors"
-                >
-                  Send message
-                </button>
-              </div>
-            </form>
+            <p className="text-[15px] text-[#737477] leading-[22px]">
+              Reach out to us for any query, we'd love to hear from you!
+            </p>
           </div>
 
-          {/* Map */}
-          <div className="bg-white border border-gray-300 overflow-hidden h-full transition-shadow duration-300">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.870734733382!2d7.057290414768182!3d4.82330299647919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069ce7eb0c5c2cb%3A0x1e6b2b1b3b3b3b3b!2s1%20Etim%20Okpoyo%20Close%2C%20off%20PH%2FAba%20Expressway%2C%20Port%20Harcourt%2C%20Rivers%20State!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng"
-              width="100%"
-              height="100%"
-              className="border-0 w-full h-[400px] md:h-full"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Map of 1 Etim Okpoyo Close, off PH/Aba Expressway, Port Harcourt"
-              aria-label="Map of 1 Etim Okpoyo Close, off PH/Aba Expressway, Port Harcourt"
-            ></iframe>
+          <div className="grid grid-cols-1 items-center w-full gap-6">
+            <div className="shadow-md p-[20px] lg:pt-[50px] lg:p-[50px] flex flex-col gap-[1.25rem] w-full">
+              <div className="pb-[20px] leading-[22.5px] text-[15px]">
+                <p>Fill the form below to send us a message</p>
+              </div>
+
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6 w-full"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Name Field */}
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your name"
+                              {...field}
+                              className="w-full rounded-none text-[15px]"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Email Field */}
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your email"
+                              {...field}
+                              className="w-full rounded-none text-[15px]"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Phone Field */}
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your phone number"
+                              {...field}
+                              className="w-full rounded-none text-[15px]"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {/* Business Unit Field */}
+                    <FormField
+                      control={form.control}
+                      name="businessUnit"
+                      render={({ field }) => (
+                        <FormItem className="shadow-none">
+                          <FormLabel>Business Unit</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue
+                                  className="text-[15px]"
+                                  placeholder="Select business unit"
+                                />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="text-[15px]">
+                              <SelectItem value="Agro Services">
+                                Agro Services
+                              </SelectItem>
+                              <SelectItem value="Marine">Marine</SelectItem>
+                              <SelectItem value="Energies">Energies</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  {/* Message Field */}
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Your message"
+                            {...field}
+                            className="min-h-[150px] rounded-none"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="flex items-center justify-center">
+                    <Button
+                      type="submit"
+                      className="w-full max-w-xs rounded-none bg-[#890c25] hover:bg-[#6e0a1f]  "
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin mr-2 " />
+                      ) : null}
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+            </div>
           </div>
         </div>
       </MaxWidthWrapper>
@@ -267,4 +438,4 @@ const ContactFormMap: React.FC = () => {
   );
 };
 
-export default ContactFormMap;
+export default ContactForm;
