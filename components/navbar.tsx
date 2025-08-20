@@ -71,10 +71,10 @@ const Navbar = () => {
   };
   const navLinks = [
     // { href: "/admissions", label: "Admissions" },
-    { href: "/faculties", label: "Trainings" },
+    { href: "/", label: "Trainings" },
 
-    { href: "/news", label: "News" },
-    { href: "/", label: "Gallery" },
+    { href: "/", label: "News" },
+    // { href: "/", label: "Gallery" },
 
     { href: "/contact", label: "Contact" },
 
@@ -82,9 +82,9 @@ const Navbar = () => {
   ];
 
   const aboutLinks = [
-    { href: "/about", label: "Agro Services" },
-    { href: "/our-story", label: "Maritime" },
-    { href: "/why-choose-us", label: "Energies" },
+    { href: "/", label: "Agro Services" },
+    { href: "/", label: "Maritime" },
+    { href: "/", label: "Energies" },
   ];
 
   const socialLinks = [
@@ -141,6 +141,12 @@ const Navbar = () => {
                 className="font-medium text-sm text-white hover:text-gray-200 transition-colors duration-200 px-2 py-1"
               >
                 Home
+              </Link>
+              <Link
+                href="/"
+                className="font-medium text-sm text-white hover:text-gray-200 transition-colors duration-200 px-2 py-1"
+              >
+                About Us
               </Link>
 
               {/* About Us Dropdown - Right after Home */}
