@@ -143,7 +143,7 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                href="/"
+                href="/about-us"
                 className="font-medium text-sm text-white hover:text-gray-200 transition-colors duration-200 px-2 py-1"
               >
                 About Us
