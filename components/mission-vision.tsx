@@ -21,7 +21,7 @@ const sections: Section[] = [
     title: 'Our Mission',
     content:
       'To optimize operations, deliver exceptional value to clients, drive sustainable growth, and make a positive global impact. ',
-    image: '/maintenance.webp',
+    image: '/instrumentation.jpg',
   },
 ];
 
@@ -62,7 +62,7 @@ const MissionVision: React.FC = () => {
             {/* Image - Top Half */}
             <div className="relative h-1/2 w-full">
               <Image
-                src="/maintenance.webp"
+                src="/manpower.webp"
                 alt="values"
                 fill
                 className="object-cover"
