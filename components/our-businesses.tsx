@@ -28,11 +28,11 @@ const services: Service[] = [
     link: '#',
   },
   {
-    title: 'Oil & Gas Services',
+    title: 'Energies',
     description:
       'Specialized solutions for the energy sector including equipment supply, maintenance, and technical support.',
     image: '/01.webp', // Replace with actual image path
-    link: '#',
+    link: '/our-business/energies',
   },
   {
     title: 'Training Programs',
