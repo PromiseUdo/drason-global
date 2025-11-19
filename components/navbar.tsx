@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { useState, useEffect, useRef } from 'react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
   Menu,
   X,
@@ -16,9 +16,9 @@ import {
   Linkedin,
   Search,
   ChevronDown,
-} from "lucide-react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import { motion, AnimatePresence } from "framer-motion";
+} from 'lucide-react';
+import MaxWidthWrapper from './max-width-wrapper';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -28,26 +28,39 @@ const Navbar = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Check if current route is home
-  const isHome = pathname === "/";
-
-  // Handle scroll effect
+  // Handle scroll — one robust listener
   useEffect(() => {
-    if (!isHome) {
-      setHasScrolled(true);
-      return;
-    }
-
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setHasScrolled(isScrolled);
+    // Check initial scroll position
+    const checkScroll = () => {
+      setHasScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHome]);
+    checkScroll(); // Run immediately on mount
 
-  // Close dropdown when clicking outside
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
+
+    // Throttle scroll for performance
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []); // Empty dep array — runs once
+
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -58,54 +71,47 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleAbout = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent event bubbling
+    e.stopPropagation();
     setAboutOpen(!aboutOpen);
   };
+
   const navLinks = [
-    // { href: "/admissions", label: "Admissions" },
-    { href: "/", label: "Trainings" },
-
-    { href: "/", label: "News" },
-    // { href: "/", label: "Gallery" },
-
-    { href: "/contact", label: "Contact" },
-
-    // { href: "/faq", label: "FAQ" },
+    { href: '/', label: 'Trainings' },
+    { href: '/', label: 'News' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const aboutLinks = [
-    { href: "/", label: "Agro Services" },
-    { href: "/", label: "Maritime" },
-    { href: "/", label: "Energies" },
+    { href: '/our-business/foods', label: 'Foods' },
+    { href: '/our-business/maritime', label: 'Maritime' },
+    { href: '/our-business/energies', label: 'Energies' },
   ];
 
   const socialLinks = [
     {
-      href: "https://instagram.com",
-      label: "Instagram",
+      href: 'https://instagram.com',
+      label: 'Instagram',
       icon: <Instagram className="h-5 w-5" />,
     },
     {
-      href: "https://twitter.com",
-      label: "Twitter",
+      href: 'https://twitter.com',
+      label: 'Twitter',
       icon: <Twitter className="h-5 w-5" />,
     },
     {
-      href: "https://facebook.com",
-      label: "Facebook",
+      href: 'https://facebook.com',
+      label: 'Facebook',
       icon: <Facebook className="h-5 w-5" />,
     },
     {
-      href: "https://linkedin.com",
-      label: "LinkedIn",
+      href: 'https://linkedin.com',
+      label: 'LinkedIn',
       icon: <Linkedin className="h-5 w-5" />,
     },
   ];
@@ -114,9 +120,10 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ${
-          hasScrolled ? "bg-[#890c25] shadow-lg" : "bg-transparent"
-        }`}
+        className={`
+          fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300
+          ${hasScrolled ? 'bg-[#890c25] shadow-lg' : 'bg-transparent'}
+        `}
       >
         <MaxWidthWrapper>
           <div className="flex items-center justify-between">
@@ -149,7 +156,7 @@ const Navbar = () => {
                 About Us
               </Link>
 
-              {/* About Us Dropdown - Right after Home */}
+              {/* Our Businesses Dropdown */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleAbout}
@@ -171,7 +178,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-white  shadow-xl z-50 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl z-50 overflow-hidden"
                     >
                       {aboutLinks.map((link) => (
                         <Link
@@ -199,7 +206,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Right Side (Search + Mobile Menu) */}
+            {/* Right Side: Search + Mobile Menu */}
             <div className="flex items-center gap-6">
               <button
                 onClick={() => setIsSearchOpen(true)}
@@ -209,7 +216,7 @@ const Navbar = () => {
                 <Search className="h-5 w-5 text-white" />
               </button>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu */}
               <div className="md:hidden">
                 <Sheet open={isOpen} onOpenChange={setIsOpen}>
                   <SheetTrigger asChild>
@@ -230,8 +237,6 @@ const Navbar = () => {
                     className="bg-[#ffffff] text-[#191919] w-[75vw] max-w-sm p-6 overflow-y-auto"
                   >
                     <div className="flex flex-col h-full">
-                      {/* ... (keep existing logo and other elements) */}
-
                       <div className="flex justify-center mb-8 pb-3 border-b border-gray-400/50">
                         <Link href="/" passHref>
                           <Image
@@ -243,9 +248,8 @@ const Navbar = () => {
                           />
                         </Link>
                       </div>
-                      <nav className="flex-1 flex flex-col gap-2">
-                        {/* About Us Dropdown - First item on mobile */}
 
+                      <nav className="flex-1 flex flex-col gap-2">
                         <Link
                           href="/"
                           className="text-lg font-medium hover:text-gray-200 transition-colors duration-200 px-4 py-3 hover:bg-[#a1122f]/50"
@@ -275,7 +279,7 @@ const Navbar = () => {
                             {aboutOpen && (
                               <motion.div
                                 initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: "auto" }}
+                                animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.2 }}
                                 className="pl-4 overflow-hidden"

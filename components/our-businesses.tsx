@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { ArrowRight } from "lucide-react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import Link from "next/link";
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import MaxWidthWrapper from './max-width-wrapper';
+import Link from 'next/link';
 
 interface Service {
   title: string;
@@ -14,52 +14,52 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: "Agro Services",
+    title: 'Foods',
     description:
-      "Comprehensive agricultural solutions including equipment leasing, crop consulting, and farm management services.",
-    image: "/03.webp", // Replace with actual image path
-    link: "#",
+      'Comprehensive agricultural solutions including equipment leasing, crop consulting, and farm management services.',
+    image: '/03.webp', // Replace with actual image path
+    link: '/our-business/foods',
   },
   {
-    title: "Maritime Services",
+    title: 'Maritime Services',
     description:
-      "End-to-end maritime solutions including vessel chartering, logistics, and port operations management.",
-    image: "/maritime.webp", // Replace with actual image path
-    link: "#",
+      'End-to-end maritime solutions including vessel chartering, logistics, and port operations management.',
+    image: '/maritime.webp', // Replace with actual image path
+    link: '#',
   },
   {
-    title: "Oil & Gas Services",
+    title: 'Oil & Gas Services',
     description:
-      "Specialized solutions for the energy sector including equipment supply, maintenance, and technical support.",
-    image: "/01.webp", // Replace with actual image path
-    link: "#",
+      'Specialized solutions for the energy sector including equipment supply, maintenance, and technical support.',
+    image: '/01.webp', // Replace with actual image path
+    link: '#',
   },
   {
-    title: "Training Programs",
+    title: 'Training Programs',
     description:
-      "Industry-recognized certification courses for professionals across all our service sectors.",
-    image: "/presentation.webp", // Replace with actual image path
-    link: "#",
+      'Industry-recognized certification courses for professionals across all our service sectors.',
+    image: '/presentation.webp', // Replace with actual image path
+    link: '#',
   },
 ];
 
 const BusinessSection: React.FC = () => {
   return (
-    <section className="my-20 bg-white">
+    <section className="my-24 bg-white">
       <MaxWidthWrapper>
         {/* Title Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading mb-4 sm:mb-0">
             Our Business Divisions
           </h2>
-          <Link
+          {/* <Link
             href="/"
             className="group overflow-hidden inline-flex relative items-center gap-2 px-6 py-3 text-sm bg-[#890c25] font-semibold text-white uppercase tracking-wider transition-colors"
           >
             <span className="relative z-10">View All Services</span>
             <span className="absolute inset-0 bg-[#00984A] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
             <ArrowRight className="-rotate-45 w-4 h-4 relative z-10" />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Service Cards */}

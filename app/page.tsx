@@ -1,13 +1,13 @@
-import CTASection from "@/components/cta";
-import FeaturedTrainings from "@/components/featuerd-trainings";
-import Feedback from "@/components/feedback";
-import FunFactSection from "@/components/fun-facts";
-import HeroSlider from "@/components/hero-slider";
-import NewsSection from "@/components/news-section";
-import OurBusinesses from "@/components/our-businesses";
-import ParallaxImageSection from "@/components/parallax-section";
-import WhyChooseUs from "@/components/why-choose-us";
-import Image from "next/image";
+import CTASection from '@/components/cta';
+import FeaturedTrainings from '@/components/featuerd-trainings';
+import Feedback from '@/components/feedback';
+import HeroSlider from '@/components/hero-slider';
+import MissionVision from '@/components/mission-vision';
+import NewsSection from '@/components/news-section';
+import OurBusinesses from '@/components/our-businesses';
+import PortfolioSection from '@/components/our-portfolio';
+import ParallaxImageSection from '@/components/parallax-section';
+import WhyChooseUs from '@/components/why-choose-us';
 
 export default function Home() {
   return (
@@ -15,9 +15,11 @@ export default function Home() {
       <HeroSlider />
 
       <OurBusinesses />
-      <FunFactSection />
+      <MissionVision />
+      {/* <FunFactSection /> */}
       <WhyChooseUs />
       <ParallaxImageSection />
+      <PortfolioSection />
       <FeaturedTrainings />
       <Feedback />
       <CTASection />

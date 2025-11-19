@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { ArrowRight, User, Calendar } from "lucide-react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import { ArrowRight, User, Calendar } from 'lucide-react';
+import MaxWidthWrapper from './max-width-wrapper';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Blog {
   category: string;
@@ -18,26 +18,26 @@ interface Blog {
 
 const blogs: Blog[] = [
   {
-    category: "Oil & Gas",
+    category: 'Oil & Gas',
     title:
       "5 Emerging Technologies Transforming Nigeria's Oil & Gas Sector in 2025",
     excerpt:
       "From AI-powered drilling optimization to blockchain for supply chain transparency, discover how cutting-edge technologies are revolutionizing Nigeria's energy sector. Learn how our certified training programs prepare professionals for these advancements",
-    author: "Drason Global",
-    date: "Oct 29, 2024",
-    image: "/oilgas.webp",
-    link: "/news/1",
+    author: 'Drason Global',
+    date: 'Oct 29, 2024',
+    image: '/oilgas.webp',
+    link: '/news/1',
   },
   {
-    category: "Agriculture",
+    category: 'Agriculture',
     title:
       "From Farm to Export: How Agro-Tech is Boosting Nigeria's Agricultural Productivity",
     excerpt:
-      "How precision farming and post-harvest tech are helping Nigerian agribusinesses meet international export standards. See how our agro-services team helped a cassava processor increase yields by 35%.",
-    author: "Drason Global",
-    date: "Oct 29, 2025",
-    image: "/cassava.webp",
-    link: "/news/2",
+      'How precision farming and post-harvest tech are helping Nigerian agribusinesses meet international export standards. See how our agro-services team helped a cassava processor increase yields by 35%.',
+    author: 'Drason Global',
+    date: 'Oct 29, 2025',
+    image: '/cassava.webp',
+    link: '/news/2',
   },
 ];
 
@@ -46,14 +46,14 @@ const NewsSection: React.FC = () => {
     <section className="my-20 bg-white">
       <MaxWidthWrapper>
         {/* Title Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
-          <div className="text-center sm:text-left mb-4 sm:mb-0">
+        <div className=" border-b-2 border-b-black pb-6 flex flex-col sm:flex-row justify-between items-center mb-12">
+          <div className=" text-center sm:text-left mb-4 sm:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading mb-4">
-              Read Our Latest News
+              Never miss our latest news and articles
             </h2>
-            <p className="text-base md:text-lg text-gray-600">
+            {/* <p className="text-base md:text-lg text-gray-600">
               Our mission is to provide you with valuable insights
-            </p>
+            </p> */}
           </div>
           <Link
             href="/news"
@@ -113,7 +113,7 @@ const NewsSection: React.FC = () => {
                     <User className="w-4 h-4 text-gray-400" />
                     <Link
                       href={`/authors/${blog.author
-                        .replace(/\s+/g, "-")
+                        .replace(/\s+/g, '-')
                         .toLowerCase()}`}
                       className="hover:text-blue-600 transition-colors"
                     >

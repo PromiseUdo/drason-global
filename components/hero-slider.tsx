@@ -1,42 +1,42 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import MaxWidthWrapper from "@/components/max-width-wrapper";
-import Image from "next/image";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
+import Image from 'next/image';
 
 const slides = [
   {
-    image: "/01.webp",
-    headline: "Excellent Services in Oil and Gas Sector",
-    subheading: "Drason Energies",
-    primaryButton: "Explore",
-    secondaryButton: "Learn more",
+    image: '/parallax.jpeg',
+    headline: 'Excellent Services in Oil and Gas Sector',
+    subheading: 'Drason Energies',
+    primaryButton: 'Explore',
+    secondaryButton: 'Learn more',
   },
 
   {
-    image: "/03.webp",
-    headline: "Sustainable, healthy agro products for your well-being",
-    subheading: "Drason Foods",
-    primaryButton: "Explore",
-    secondaryButton: "Learn more",
+    image: '/03.webp',
+    headline: 'Sustainable, healthy agro products for your well-being',
+    subheading: 'Drason Foods',
+    primaryButton: 'Explore',
+    secondaryButton: 'Learn more',
   },
 
   {
-    image: "/maritime.webp",
-    headline: "Efficient Commercial Maritime Services",
-    subheading: "Drason Maritime",
-    primaryButton: "Explore",
-    secondaryButton: "Learn more",
+    image: '/maritime.webp',
+    headline: 'Efficient Commercial Maritime Services',
+    subheading: 'Drason Maritime',
+    primaryButton: 'Explore',
+    secondaryButton: 'Learn more',
   },
   {
-    image: "/presentation.webp",
-    headline: "Effective trainings for growth",
-    subheading: "Drason Trainings",
-    primaryButton: "View Courses",
-    secondaryButton: "Learn more",
+    image: '/presentation.webp',
+    headline: 'Effective trainings for growth',
+    subheading: 'Drason Trainings',
+    primaryButton: 'View Courses',
+    secondaryButton: 'Learn more',
   },
 ];
 
@@ -53,7 +53,7 @@ const HeroSlider = () => {
       y: 0,
       transition: {
         duration: 1.5,
-        ease: "easeOut" as const,
+        ease: 'easeOut' as const,
       },
     },
   };
@@ -118,7 +118,7 @@ const HeroSlider = () => {
                   scale: 1,
                   transition: {
                     opacity: { duration: 1 }, // smoother fade
-                    scale: { duration: 8, ease: "linear" },
+                    scale: { duration: 8, ease: 'linear' },
                   },
                 }}
                 exit={{
@@ -135,7 +135,7 @@ const HeroSlider = () => {
                   className="object-cover"
                   quality={100}
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-black/70" />
               </motion.div>
             )
         )}
