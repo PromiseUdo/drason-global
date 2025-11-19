@@ -84,7 +84,7 @@ const PortfolioSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-heading">
-              Our Portfolio
+              Projects Executed
             </h2>
             <p className="mt-2 text-lg text-gray-600">
               Delivering excellence in engineering and safety solutions
