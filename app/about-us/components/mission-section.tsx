@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 const MissionSection = () => {
   return (
@@ -17,7 +17,7 @@ const MissionSection = () => {
           {/* Vertical Separator Line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2">
             <div className="h-full w-px bg-gray-300 mx-auto"></div>
-          </div>{" "}
+          </div>{' '}
           {/* Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Side */}
@@ -37,10 +37,10 @@ const MissionSection = () => {
                     and employees
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
-                  {" "}
+                <div className="mt-6 grayscale opacity-90 relative w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
+                  {' '}
                   <Image
-                    src="/maritime.webp"
+                    src="/integrity.webp"
                     alt="Diversity"
                     fill
                     className="object-cover "
@@ -63,12 +63,12 @@ const MissionSection = () => {
                     exceptional outcomes for our clients and stakeholders
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
+                <div className="mt-6 grayscale opacity-90 relative w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
                   <Image
-                    src="/maritime.webp"
+                    src="/excellence.webp"
                     alt="Innovation"
                     fill
-                    className="object-cover "
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -87,9 +87,9 @@ const MissionSection = () => {
                     unified team
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
+                <div className="mt-6 relative grayscale opacity-90 w-full md:w-[calc(100%-2rem)] h-80 mx-auto md:ml-auto md:mr-8">
                   <Image
-                    src="/maritime.webp"
+                    src="/teamwork.webp"
                     alt="Innovation"
                     fill
                     className="object-cover "
@@ -115,9 +115,9 @@ const MissionSection = () => {
                     environment where everyone can thrive
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
+                <div className="mt- grayscale opacity-90 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
                   <Image
-                    src="/maritime.webp"
+                    src="/people.webp"
                     alt="Excellence"
                     fill
                     className="object-cover "
@@ -140,9 +140,9 @@ const MissionSection = () => {
                     unparalleled service to ensure their success and happiness
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
+                <div className="mt-6 grayscale opacity-90 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
                   <Image
-                    src="/maritime.webp"
+                    src="/customer.webp"
                     alt="Academic Excellence"
                     fill
                     className="object-cover "
@@ -163,9 +163,9 @@ const MissionSection = () => {
                     industry, delivering cutting-edge products and services
                   </p>
                 </div>
-                <div className="mt-6 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
+                <div className="mt-6 grayscale opacity-90 relative w-full md:w-[calc(100%-2rem)] mx-auto mr-auto  h-80  md:ml-8">
                   <Image
-                    src="/maritime.webp"
+                    src="/innovation.webp"
                     alt="Academic Excellence"
                     fill
                     className="object-cover "

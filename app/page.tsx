@@ -5,6 +5,7 @@ import HeroSlider from '@/components/hero-slider';
 import MissionVision from '@/components/mission-vision';
 import NewsSection from '@/components/news-section';
 import OurBusinesses from '@/components/our-businesses';
+import OurClientsAll from '@/components/our-clients-all';
 import PortfolioSection from '@/components/our-portfolio';
 import ParallaxImageSection from '@/components/parallax-section';
 import WhyChooseUs from '@/components/why-choose-us';
@@ -19,8 +20,9 @@ export default function Home() {
       {/* <FunFactSection /> */}
       <WhyChooseUs />
       <ParallaxImageSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       <FeaturedTrainings />
+      <OurClientsAll />
       <Feedback />
       <CTASection />
       <NewsSection />

@@ -9,7 +9,8 @@ import Image from 'next/image';
 
 const slides = [
   {
-    image: '/parallax.jpeg',
+    image: '/maritime.webp',
+
     headline: 'Excellent Services in Oil and Gas Sector',
     subheading: 'Drason Energies',
     primaryButton: 'Explore',
@@ -17,7 +18,7 @@ const slides = [
   },
 
   {
-    image: '/03.webp',
+    image: '/foods_bg.webp',
     headline: 'Sustainable, healthy agro products for your well-being',
     subheading: 'Drason Foods',
     primaryButton: 'Explore',
@@ -25,7 +26,7 @@ const slides = [
   },
 
   {
-    image: '/maritime.webp',
+    image: '/parallax.jpeg',
     headline: 'Efficient Commercial Maritime Services',
     subheading: 'Drason Maritime',
     primaryButton: 'Explore',

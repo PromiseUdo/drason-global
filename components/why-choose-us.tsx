@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import Image from "next/image";
-import Link from "next/link";
-import { LiteYoutubeEmbed } from "react-lite-yt-embed";
+import React, { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
+import MaxWidthWrapper from './max-width-wrapper';
+import Image from 'next/image';
+import Link from 'next/link';
+import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 
 const whyUs = [
-  "Exceptional service delivery with 98% client retention rate,",
-  "Personalized solutions, and dedicated support teams for every project",
-  "Uncompromising commitment to safety with zero-incident targets",
-  "Strategic Location and Global Linkages",
-  "A Culture of Excellence Built to Excel",
-  "Commitment to Innovation and Research",
-  "Vision-Driven Leadership",
-  "Certified Professionals",
+  'Exceptional service delivery with 98% client retention rate,',
+  'Personalized solutions, and dedicated support teams for every project',
+  'Uncompromising commitment to safety with zero-incident targets',
+  'Strategic Location and Global Linkages',
+  'A Culture of Excellence Built to Excel',
+  'Commitment to Innovation and Research',
+  'Vision-Driven Leadership',
+  'Certified Professionals',
 ];
 
 const WhyChooseUs: React.FC = () => {
@@ -79,7 +79,7 @@ const WhyChooseUs: React.FC = () => {
             <div className="relative mt-12 lg:mt-0">
               <div className="relative">
                 <Image
-                  src="/01.webp"
+                  src="/maritime2.webp"
                   alt="Campus video thumbnail"
                   width={600}
                   height={400}

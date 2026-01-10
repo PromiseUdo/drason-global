@@ -83,7 +83,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Trainings' },
-    { href: '/', label: 'News' },
+    // { href: '/', label: 'News' },
     { href: '/contact', label: 'Contact' },
   ];
 

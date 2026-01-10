@@ -55,9 +55,10 @@ const ServicesSection = () => {
       <MaxWidthWrapper>
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#890c25] tracking-tight">
+          <h2 className="text-3xl text-center md:text-4xl font-bold text-gray-900 font-heading mb-4 sm:mb-0">
             Our Services
           </h2>
+
           <p className="mt-3 text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
             Delivering excellence across the agricultural value chain with
             sustainability, quality, and innovation at our core.

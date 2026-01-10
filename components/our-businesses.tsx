@@ -17,21 +17,21 @@ const services: Service[] = [
     title: 'Foods',
     description:
       'Comprehensive agricultural solutions including equipment leasing, crop consulting, and farm management services.',
-    image: '/03.webp', // Replace with actual image path
+    image: '/harvesting.webp', // Replace with actual image path
     link: '/our-business/foods',
   },
   {
     title: 'Maritime Services',
     description:
       'End-to-end maritime solutions including vessel chartering, logistics, and port operations management.',
-    image: '/maritime.webp', // Replace with actual image path
-    link: '#',
+    image: '/parallax.jpeg', // Replace with actual image path
+    link: '/our-business/maritime',
   },
   {
     title: 'Energies',
     description:
       'Specialized solutions for the energy sector including equipment supply, maintenance, and technical support.',
-    image: '/01.webp', // Replace with actual image path
+    image: '/workers.webp', // Replace with actual image path
     link: '/our-business/energies',
   },
   {

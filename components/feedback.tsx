@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Star } from "lucide-react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import MaxWidthWrapper from "@/components/max-width-wrapper";
+import React from 'react';
+import { Star } from 'lucide-react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
 
 interface Testimonial {
   name: string;
@@ -19,25 +19,25 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Engr. Chukwuma Okeke",
-    designation: "HSE Manager",
-    text: "As an oil & gas company, we require strict compliance. Their team consistently meets all safety and operational standards.",
-    image: "/testifier1.jpg",
+    name: 'Engr. Chukwuma Okeke',
+    designation: 'HSE Manager',
+    text: 'As an oil & gas company, we require strict compliance. Their team consistently meets all safety and operational standards.',
+    image: '/testifier1.jpg',
     rating: 5,
   },
   {
-    name: "Margaret Olawumi",
+    name: 'Margaret Olawumi',
 
-    designation: "Operations Coordinator",
-    text: "The 24/7 support has been invaluable during our offshore operations. Immediate response at any hour makes them our preferred partner.",
-    image: "/testifier2.jpg",
+    designation: 'Operations Coordinator',
+    text: 'The 24/7 support has been invaluable during our offshore operations. Immediate response at any hour makes them our preferred partner.',
+    image: '/testifier2.jpg',
     rating: 5,
   },
   {
-    name: "Dr. Amina Mohammed",
-    designation: "Operations Director",
-    text: "The agro-consulting services helped us increase our yield by 40% in just one planting season. Truly exceptional service!",
-    image: "/testifier3.jpg",
+    name: 'Dr. Amina Mohammed',
+    designation: 'Operations Director',
+    text: 'The agro-consulting services helped us increase our yield by 40% in just one planting season. Truly exceptional service!',
+    image: '/testifier3.jpg',
     rating: 5,
   },
 ];
@@ -66,7 +66,7 @@ const Feedback: React.FC = () => {
             loop={true}
             speed={1000}
             autoplay={{ delay: 7000 }}
-            pagination={{ el: ".rts__pagination", clickable: true }}
+            pagination={{ el: '.rts__pagination', clickable: true }}
             breakpoints={{
               320: { slidesPerView: 1 },
               575: { slidesPerView: 1.5 },
@@ -86,8 +86,8 @@ const Feedback: React.FC = () => {
                         key={i}
                         className={`w-5 h-5 ${
                           i < testimonial.rating
-                            ? "text-yellow-400 fill-yellow-400"
-                            : "text-gray-300"
+                            ? 'text-yellow-400 fill-yellow-400'
+                            : 'text-gray-300'
                         }`}
                       />
                     ))}
@@ -101,14 +101,14 @@ const Feedback: React.FC = () => {
                   {/* Author Info */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="relative w-12 h-12">
+                      {/* <div className="relative w-12 h-12">
                         <Image
                           src={testimonial.image}
                           alt={`${testimonial.name} avatar`}
                           fill
                           className="rounded-full object-cover"
                         />
-                      </div>
+                      </div> */}
                       <div>
                         <h5 className="text-lg font-normal text-gray-900 mb-0">
                           {testimonial.name}

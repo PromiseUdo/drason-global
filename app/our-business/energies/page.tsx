@@ -6,6 +6,7 @@ import AboutDrasonEnergies from './components/about';
 import { ServicesDetailed } from './components/service-item';
 import { WhyDrasonEnergies } from './components/why-drason';
 import { CallToAction } from './components/call-to-action';
+import OurClients from '@/components/our-clients';
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
       <AboutDrasonEnergies />
       <WhyDrasonEnergies />
 
+      <OurClients />
       <CallToAction />
 
       {/* <ServicesDetailed /> */}
